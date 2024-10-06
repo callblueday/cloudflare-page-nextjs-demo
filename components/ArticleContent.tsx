@@ -18,14 +18,14 @@ const ArticleContent: React.FC<ArticleContentProps> = ({ title, date, body, date
   const currentTheme = theme === 'system' ? systemTheme : theme;
 
   return (
-    <article className={`py-8 mx-auto max-w-xl ${currentTheme === 'dark' ? 'dark:text-white' : ''}`}>
+    <article className={`py-8 mx-auto max-w-3xl ${currentTheme === 'dark' ? 'dark:text-white' : ''}`}>
       <div className="mb-8 text-center">
         <time dateTime={date} className={`mb-1 text-xs ${currentTheme === 'dark' ? 'text-gray-400' : 'text-gray-600'}`}>
           {dateLabel}: {format(parseISO(date), "yyyy-MM-dd")}
         </time>
         <h1 className="text-3xl font-bold">{title}</h1>
       </div>
-      <div className={`prose prose-lg mx-auto ${currentTheme === 'dark' ? 'prose-invert' : 'prose-indigo'}`}>
+      <div className={`prose prose-lg mx-auto text-sm ${currentTheme === 'dark' ? 'prose-invert' : 'prose-indigo'}`}>
         <ReactMarkdown rehypePlugins={[rehypeRaw]}>{body}</ReactMarkdown>
       </div>
     </article>

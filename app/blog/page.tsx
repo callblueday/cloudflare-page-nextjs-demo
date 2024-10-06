@@ -19,9 +19,9 @@ function PostCard(blog: Blog) {
       <time dateTime={blog.date} className="block mb-2 text-xs text-gray-600">
         {format(parseISO(blog.date), "LLLL d, yyyy")}
       </time>
-      <div className="prose prose-sm">
+      {/* <div className="prose prose-sm">
         <ReactMarkdown rehypePlugins={[rehypeRaw]}>{blog.body.raw}</ReactMarkdown>
-      </div>
+      </div> */}
     </div>
   );
 }
